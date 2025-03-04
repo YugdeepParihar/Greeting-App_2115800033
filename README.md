@@ -1,2 +1,1 @@
-Greeting App
-
+# Hello Greeting Application
