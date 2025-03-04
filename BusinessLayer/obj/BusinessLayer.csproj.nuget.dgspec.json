@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj": {}
+    "C:\\Users\\yugde\\Desktop\\Greeting-App\\BusinessLayer\\BusinessLayer.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\yugde\\Desktop\\Greeting-App\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\yugde\\Desktop\\Greeting-App\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "D:\\Visual Studio\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\yatha\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\HelloGreetingApplication\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\yugde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\yatha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yugde\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Visual Studio\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj": {
-                "projectPath": "D:\\Visual Studio\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj"
+              "C:\\Users\\yugde\\Desktop\\Greeting-App\\ModelLayer\\ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\ModelLayer\\ModelLayer.csproj"
               },
-              "D:\\Visual Studio\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj": {
-                "projectPath": "D:\\Visual Studio\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj"
+              "C:\\Users\\yugde\\Desktop\\Greeting-App\\RepositoryLayer\\RepositoryLayer.csproj": {
+                "projectPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\RepositoryLayer\\RepositoryLayer.csproj"
               }
             }
           }
@@ -51,7 +51,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -72,24 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.25057.12\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Visual Studio\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj": {
+    "C:\\Users\\yugde\\Desktop\\Greeting-App\\ModelLayer\\ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj",
+        "projectUniqueName": "C:\\Users\\yugde\\Desktop\\Greeting-App\\ModelLayer\\ModelLayer.csproj",
         "projectName": "ModelLayer",
-        "projectPath": "D:\\Visual Studio\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj",
-        "packagesPath": "C:\\Users\\yatha\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\HelloGreetingApplication\\ModelLayer\\obj\\",
+        "projectPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\ModelLayer\\ModelLayer.csproj",
+        "packagesPath": "C:\\Users\\yugde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\ModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\yatha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yugde\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -116,7 +116,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -137,24 +137,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.25057.12\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Visual Studio\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj": {
+    "C:\\Users\\yugde\\Desktop\\Greeting-App\\RepositoryLayer\\RepositoryLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj",
+        "projectUniqueName": "C:\\Users\\yugde\\Desktop\\Greeting-App\\RepositoryLayer\\RepositoryLayer.csproj",
         "projectName": "RepositoryLayer",
-        "projectPath": "D:\\Visual Studio\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj",
-        "packagesPath": "C:\\Users\\yatha\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\HelloGreetingApplication\\RepositoryLayer\\obj\\",
+        "projectPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\RepositoryLayer\\RepositoryLayer.csproj",
+        "packagesPath": "C:\\Users\\yugde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yugde\\Desktop\\Greeting-App\\RepositoryLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\yatha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yugde\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -181,7 +181,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -202,7 +202,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.25057.12\\RuntimeIdentifierGraph.json"
         }
       }
     }
