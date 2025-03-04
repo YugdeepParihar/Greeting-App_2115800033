@@ -2,6 +2,7 @@
 using BusinessLayer.Service;
 using NLog;
 using NLog.Web;
+using HelloGreetingApplication.BusinessLayer;
 
 //Implementing NLogger
 var logger = LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -27,7 +28,8 @@ try
     builder.Services.AddControllers();
 
     //Registering the GreetingService
-    builder.Services.AddScoped<IGreetingService, GreetingService>();
+    //builder.Services.AddScoped<IGreetingService, GreetingService>();
+    builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 
     var app = builder.Build();
 
@@ -47,7 +49,7 @@ try
 }
 catch (Exception ex)
 {
-    logger.Error(ex, "Application stopped due to an exception."); // ✅ Correct logging for exceptions
+    logger.Error(ex, "Application stopped due to an exception."); 
     throw;
 }
 finally

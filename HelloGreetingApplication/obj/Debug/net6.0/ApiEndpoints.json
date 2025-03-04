@@ -2,7 +2,7 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Get",
-    "RelativePath": "HelloGreeting",
+    "RelativePath": "api/HelloGreeting",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,13 +12,13 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Post",
-    "RelativePath": "HelloGreeting",
+    "RelativePath": "api/HelloGreeting",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestModel",
+        "Name": "request",
         "Type": "ModelLayer.Model.RequestBody",
         "IsRequired": true
       }
@@ -28,13 +28,13 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Put",
-    "RelativePath": "HelloGreeting",
+    "RelativePath": "api/HelloGreeting",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestModel",
+        "Name": "request",
         "Type": "ModelLayer.Model.RequestBody",
         "IsRequired": true
       }
@@ -44,13 +44,13 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Patch",
-    "RelativePath": "HelloGreeting",
+    "RelativePath": "api/HelloGreeting",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestModel",
+        "Name": "request",
         "Type": "ModelLayer.Model.RequestBody",
         "IsRequired": true
       }
@@ -60,24 +60,8 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Delete",
-    "RelativePath": "HelloGreeting/{key}",
+    "RelativePath": "api/HelloGreeting",
     "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "key",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
-    "Method": "Greetings",
-    "RelativePath": "HelloGreeting/greeting",
-    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

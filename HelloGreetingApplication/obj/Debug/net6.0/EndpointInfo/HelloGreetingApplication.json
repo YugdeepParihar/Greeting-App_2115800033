@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/HelloGreeting": {
+    "/api/HelloGreeting": {
       "get": {
         "tags": [
           "HelloGreeting"
@@ -102,32 +102,8 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/HelloGreeting/{key}": {
+      },
       "delete": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "parameters": [
-          {
-            "name": "key",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/greeting": {
-      "get": {
         "tags": [
           "HelloGreeting"
         ],
@@ -142,19 +118,19 @@
   "components": {
     "schemas": {
       "RequestBody": {
-        "required": [
-          "key",
-          "value"
-        ],
         "type": "object",
         "properties": {
-          "key": {
-            "minLength": 1,
-            "type": "string"
+          "firstName": {
+            "type": "string",
+            "nullable": true
           },
-          "value": {
-            "minLength": 1,
-            "type": "string"
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

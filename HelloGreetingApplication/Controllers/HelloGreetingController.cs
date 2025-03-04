@@ -1,119 +1,143 @@
 using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
+using RepositoryLayer.Service;
+using System.Threading.Tasks;
 
 namespace HelloGreetingApplication.Controllers
 {
-    /// <summary>
-    /// Class Providing API for HelloGreeting
-    /// </summary>
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class HelloGreetingController : ControllerBase
     {
-        private static Dictionary<string, string> greetings = new Dictionary<string, string>();
-        private readonly IGreetingService _greetingService;
+        private readonly IGreetingBL _greetingBL;
 
-        public HelloGreetingController(IGreetingService greetingService)
+        public HelloGreetingController(IGreetingBL greetingBL)
         {
-            _greetingService = greetingService;
+            _greetingBL = greetingBL;
         }
 
         /// <summary>
-        /// Get Method to get the Greeting Message
+        /// Retrieves a welcome greeting from the API.
         /// </summary>
-        /// <returns>Hello, World</returns>
+        /// <returns>A ResponseBody containing a welcome message and current date.</returns>
         [HttpGet]
         public IActionResult Get()
         {
-            ResponseBody<Dictionary<string, string>> ResponseModel = new ResponseBody<Dictionary<string, string>>();
+            var greetingResult = _greetingBL.GetGreeting();
+            var data = new
+            {
+                Greeting = greetingResult,
+                Date = DateTime.Now
+            };
 
-            ResponseModel.Success = true;
-            ResponseModel.Message = "Hello to Greeting App API Endpoint";
-            ResponseModel.Data = greetings;
-
-            return Ok(ResponseModel);
+            var response = new ResponseBody<object>
+            {
+                Success = true,
+                Message = "Request successful",
+                Data = data
+            };
+            return Ok(response);
         }
 
+
+
+        /// <summary>
+        /// Creates a personalized greeting based on provided user attributes.
+        /// </summary>
+        /// <param name="request">The RequestBody containing optional first name and last name.</param>
+        /// <returns>A ResponseBody with a personalized greeting and creation timestamp.</returns>
         [HttpPost]
-        public IActionResult Post([FromBody] RequestBody requestModel)
+        public IActionResult Post([FromBody] RequestBody request)
         {
-            ResponseBody<string> ResponseModel = new ResponseBody<string>();
+            var greetingResult = _greetingBL.GetGreeting(request.FirstName, request.LastName);
+            var data = new
+            {
+                Greeting = greetingResult,
+                Email = request.Email,
+                ReceivedAt = DateTime.Now
+            };
 
-            greetings[requestModel.Key] = requestModel.Value;
-
-            ResponseModel.Success = true;
-            ResponseModel.Message = "Request received successfully";
-            ResponseModel.Data = $"Key: {requestModel.Key}, Value: {requestModel.Value}";
-
-            return Ok(ResponseModel);
+            var response = new ResponseBody<object>
+            {
+                Success = true,
+                Message = "Greeting created",
+                Data = data
+            };
+            return Ok(response);
         }
 
+        /// <summary>
+        /// Updates a greeting with new user information.
+        /// </summary>
+        /// <param name="request">The RequestBody containing updated first name, last name, and email.</param>
+        /// <returns>A ResponseBody with the updated full name, email, and update timestamp.</returns>
         [HttpPut]
-        public IActionResult Put([FromBody] RequestBody requestModel)
+        public IActionResult Put([FromBody] RequestBody request)
         {
-            ResponseBody<Dictionary<string, string>> ResponseModel = new ResponseBody<Dictionary<string, string>>();
+            var data = new
+            {
+                FullName = $"{request.FirstName} {request.LastName}",
+                Email = request.Email,
+                UpdatedAt = DateTime.Now
+            };
 
-            // Add or update the dictionary
-            greetings[requestModel.Key] = requestModel.Value;
-
-            ResponseModel.Success = true;
-            ResponseModel.Message = "Greeting updated successfully";
-            ResponseModel.Data = greetings;
-
-            return Ok(ResponseModel);
+            var response = new ResponseBody<object>
+            {
+                Success = true,
+                Message = "Greeting updated",
+                Data = data
+            };
+            return Ok(response);
         }
 
+        /// <summary>
+        /// Partially updates a greeting with the provided fields.
+        /// </summary>
+        /// <param name="request">The RequestBody with optional fields to update (first name, last name, or email).</param>
+        /// <returns>A ResponseBody showing which fields were updated and the update timestamp.</returns>
         [HttpPatch]
-        public IActionResult Patch(RequestBody requestModel)
+        public IActionResult Patch([FromBody] RequestBody request)
         {
-            ResponseBody<string> ResponseModel = new ResponseBody<string>();
-
-            if (!greetings.ContainsKey(requestModel.Key))
+            var data = new
             {
-                ResponseModel.Success = false;
-                ResponseModel.Message = "Key not found";
-                return NotFound(ResponseModel);
-            }
+                UpdatedFields = new
+                {
+                    FirstName = string.IsNullOrEmpty(request.FirstName) ? "Not updated" : request.FirstName,
+                    LastName = string.IsNullOrEmpty(request.LastName) ? "Not updated" : request.LastName,
+                    Email = string.IsNullOrEmpty(request.Email) ? "Not updated" : request.Email
+                },
+                UpdatedAt = DateTime.Now
+            };
 
-            greetings[requestModel.Key] = requestModel.Value;
-            ResponseModel.Success = true;
-            ResponseModel.Message = "Value partially updated successfully";
-            ResponseModel.Data = $"Key: {requestModel.Key}, Updated Value: {requestModel.Value}";
-
-            return Ok(ResponseModel);
+            var response = new ResponseBody<object>
+            {
+                Success = true,
+                Message = "Greeting partially updated",
+                Data = data
+            };
+            return Ok(response);
         }
 
-        [HttpDelete("{key}")]
-        public IActionResult Delete(string key)
+        /// <summary>
+        /// Deletes a greeting.
+        /// </summary>
+        /// <returns>A ResponseBody confirming deletion with a timestamp.</returns>
+        [HttpDelete]
+        public IActionResult Delete()
         {
-            ResponseBody<string> ResponseModel = new ResponseBody<string>();
-
-            if (!greetings.ContainsKey(key))
+            var data = new
             {
-                ResponseModel.Success = false;
-                ResponseModel.Message = "Key not found";
-                return NotFound(ResponseModel);
-            }
+                DeletedAt = DateTime.Now
+            };
 
-            greetings.Remove(key);
-            ResponseModel.Success = true;
-            ResponseModel.Message = "Entry deleted successfully";
-
-            return Ok(ResponseModel);
-        }
-
-        [HttpGet]
-        [Route("greeting")]
-        public IActionResult Greetings()
-        {
-            ResponseBody<string> ResponseModel = new ResponseBody<string>();
-
-            ResponseModel.Success = true;
-            ResponseModel.Message = "Greeting message fetched successfully";
-            ResponseModel.Data = _greetingService.GetGreetingMessage();
-
-            return Ok(ResponseModel);
+            var response = new ResponseBody<object>
+            {
+                Success = true,
+                Message = "Greeting deleted",
+                Data = data
+            };
+            return Ok(response);
         }
     }
 }
