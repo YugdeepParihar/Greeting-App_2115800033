@@ -17,5 +17,7 @@ namespace RepositoryLayer.Interface
 
         public GreetingModel UpdateGreeting(int id, GreetingModel greetingModel);
 
+        public GreetingModel DeleteGreeting(int id);
+
     }
 }

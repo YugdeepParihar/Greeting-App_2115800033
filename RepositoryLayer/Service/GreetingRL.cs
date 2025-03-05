@@ -60,6 +60,18 @@ namespace RepositoryLayer.Service
             _helloGreetingContext.SaveChanges();
             return greetingModel;
         }
+
+        public GreetingModel DeleteGreeting(int id)
+        {
+            GreetingEntity greetingEntity = _helloGreetingContext.Greetings.Find(id);
+            _helloGreetingContext.Greetings.Remove(greetingEntity);
+            _helloGreetingContext.SaveChanges();
+            GreetingModel greetingModel = new GreetingModel()
+            {
+                GreetingMessage = greetingEntity.Greeting,
+            };
+            return greetingModel;
+        }
     }
 
 }

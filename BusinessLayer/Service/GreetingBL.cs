@@ -60,5 +60,10 @@ namespace HelloGreetingApplication.BusinessLayer
         {
             return _greetingRL.UpdateGreeting(id, greetingModel);
         }
+
+        public GreetingModel DeleteGreeting(int id)
+        {
+            return _greetingRL.DeleteGreeting(id);
+        }
     }
 }
