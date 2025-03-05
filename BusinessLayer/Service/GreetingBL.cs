@@ -45,5 +45,10 @@ namespace HelloGreetingApplication.BusinessLayer
 
             return response;
         }
+
+        public GreetingModel GetGreetingById(int id)
+        {
+            return _greetingRL.GetGreetingById(id);
+        }
     }
 }

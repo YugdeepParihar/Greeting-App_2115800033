@@ -12,5 +12,7 @@ namespace BusinessLayer.Interface
     {
         string GetGreeting(string firstName = "", string lastName = "");
         GreetingResponseModel SaveGreeting(GreetingModel greetingModel);
+
+        public GreetingModel GetGreetingById(int id);
     }
 }

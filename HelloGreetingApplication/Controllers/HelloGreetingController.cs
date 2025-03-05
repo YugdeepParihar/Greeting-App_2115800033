@@ -93,6 +93,32 @@ namespace HelloGreetingApplication.Controllers
 
         }
 
+        [HttpGet("GetGreetingById/{id}")]
+        public IActionResult GetGreetingById(int id)
+        {
+            var response = new ResponseBody<GreetingModel>();
+            try
+            {
+
+                var result = _greetingBL.GetGreetingById(id);
+                if (result != null)
+                {
+                    response.Success = true;
+                    response.Message = "Greeting Message Found";
+                    response.Data = result;
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "Greeting Message Not Found";
+                return NotFound(response);
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"An error occurred: {ex.Message}";
+                return StatusCode(500, response);
+            }
+        }
 
         /// <summary>
         /// Updates a greeting with new user information.
