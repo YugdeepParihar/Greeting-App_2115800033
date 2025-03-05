@@ -192,5 +192,31 @@ namespace HelloGreetingApplication.Controllers
             };
             return Ok(response);
         }
+
+        [HttpGet("GetAllGreetings")]
+        public IActionResult GetAllGreetings()
+        {
+            ResponseBody<List<GreetingModel>> response = new ResponseBody<List<GreetingModel>>();
+            try
+            {
+                var result = _greetingBL.GetAllGreetings();
+                if (result != null && result.Count > 0)
+                {
+                    response.Success = true;
+                    response.Message = "Greeting Messages Found";
+                    response.Data = result;
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "No Greeting Messages Found";
+                return NotFound(response);
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"An error occurred: {ex.Message}";
+                return StatusCode(500, response);
+            }
+        }
     }
 }
