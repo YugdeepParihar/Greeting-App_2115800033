@@ -52,6 +52,14 @@ namespace RepositoryLayer.Service
             }
             return greetingModels;
         }
+
+        public GreetingModel UpdateGreeting(int id, GreetingModel greetingModel)
+        {
+            GreetingEntity greetingEntity = _helloGreetingContext.Greetings.Find(id);
+            greetingEntity.Greeting = greetingModel.GreetingMessage;
+            _helloGreetingContext.SaveChanges();
+            return greetingModel;
+        }
     }
 
 }
