@@ -3,6 +3,10 @@ using BusinessLayer.Service;
 using NLog;
 using NLog.Web;
 using HelloGreetingApplication.BusinessLayer;
+using RepositoryLayer.Context;
+using RepositoryLayer.Service;
+using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Interface;
 
 //Implementing NLogger
 var logger = LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -30,11 +34,16 @@ try
     //Registering the GreetingService
     //builder.Services.AddScoped<IGreetingService, GreetingService>();
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+    builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+    
+    var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+    builder.Services.AddDbContext<HelloGreetingContext>(options => options.UseSqlServer(connectionString));
 
     var app = builder.Build();
 
     app.UseSwagger();
     app.UseSwaggerUI();
+
 
     // Configure the HTTP request pipeline.
 

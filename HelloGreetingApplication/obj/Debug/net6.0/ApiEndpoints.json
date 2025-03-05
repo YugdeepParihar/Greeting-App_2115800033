@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
-    "Method": "Get",
+    "Method": "GetGreeting",
     "RelativePath": "api/HelloGreeting",
     "HttpMethod": "GET",
     "IsController": true,
@@ -65,6 +65,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "SaveGreeting",
+    "RelativePath": "api/HelloGreeting/save",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "greetingModel",
+        "Type": "ModelLayer.Model.GreetingModel",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

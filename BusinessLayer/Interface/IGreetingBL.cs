@@ -1,4 +1,5 @@
 ﻿using ModelLayer.Model;
+using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace BusinessLayer.Interface
     public interface IGreetingBL
     {
         string GetGreeting(string firstName = "", string lastName = "");
+        GreetingResponseModel SaveGreeting(GreetingModel greetingModel);
     }
 }

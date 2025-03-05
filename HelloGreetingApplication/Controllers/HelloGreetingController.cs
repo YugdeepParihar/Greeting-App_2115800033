@@ -22,7 +22,7 @@ namespace HelloGreetingApplication.Controllers
         /// </summary>
         /// <returns>A ResponseBody containing a welcome message and current date.</returns>
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetGreeting()
         {
             var greetingResult = _greetingBL.GetGreeting();
             var data = new
@@ -38,6 +38,7 @@ namespace HelloGreetingApplication.Controllers
                 Data = data
             };
             return Ok(response);
+
         }
 
 
@@ -66,6 +67,32 @@ namespace HelloGreetingApplication.Controllers
             };
             return Ok(response);
         }
+
+
+
+
+
+        /// <summary>
+        /// Saves a new greeting message to the database and returns the created greeting with its auto-generated ID.
+        /// </summary>
+        /// <param >The greeting data provided by the client, containing the message to be saved.</param>
+        /// <returns>An IActionResult with a 201 Created status, including a ResponseModel containing the saved greeting details.</returns>
+        [HttpPost]
+        [Route("save")]
+        public IActionResult SaveGreeting([FromBody] GreetingModel greetingModel)
+        {
+            var result = _greetingBL.SaveGreeting(greetingModel);
+
+            var response = new ResponseBody<object>
+            {
+                Success = true,
+                Message = "Greeting created",
+                Data = result
+            };
+            return Created("Greeting Created", response);
+
+        }
+
 
         /// <summary>
         /// Updates a greeting with new user information.
