@@ -24,7 +24,7 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult GetGreeting()
         {
-            throw new System.Exception("Exception generated.");
+            //throw new System.Exception("Exception generated.");
             var greetingResult = _greetingBL.GetGreeting();
             var data = new
             {
