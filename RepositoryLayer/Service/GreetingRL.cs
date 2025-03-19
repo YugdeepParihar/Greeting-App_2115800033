@@ -22,6 +22,7 @@ namespace RepositoryLayer.Service
             GreetingEntity greetingEntity = new GreetingEntity()
             {
                 Greeting = greetingModel.GreetingMessage,
+
             };
             _helloGreetingContext.Greetings.Add(greetingEntity);
             _helloGreetingContext.SaveChanges();

@@ -24,6 +24,7 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult GetGreeting()
         {
+            throw new System.Exception("Exception generated.");
             var greetingResult = _greetingBL.GetGreeting();
             var data = new
             {
@@ -58,6 +59,8 @@ namespace HelloGreetingApplication.Controllers
                 Email = request.Email,
                 ReceivedAt = DateTime.Now
             };
+            //name, email, pass, role = admin
+            //role = normal
 
             var response = new ResponseBody<object>
             {
@@ -67,7 +70,6 @@ namespace HelloGreetingApplication.Controllers
             };
             return Ok(response);
         }
-
 
 
 

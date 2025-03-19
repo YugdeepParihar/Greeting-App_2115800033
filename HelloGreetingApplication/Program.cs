@@ -7,6 +7,7 @@ using RepositoryLayer.Context;
 using RepositoryLayer.Service;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Interface;
+using Middlewares.GlobalExceptionHandler;
 
 //Implementing NLogger
 var logger = LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -43,6 +44,8 @@ try
 
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseMiddleware<GlobalExceptionMiddleware>();
 
 
     // Configure the HTTP request pipeline.

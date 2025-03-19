@@ -184,3 +184,7 @@ C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\obj\Debug\net6.0\Hel
 C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\obj\Debug\net6.0\ref\HelloGreetingApplication.dll
 C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\bin\Debug\net6.0\Humanizer.dll
 C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\bin\Debug\net6.0\Middlewares.dll
+C:\Users\yugde\Desktop\GreetingApp\HelloGreetingApplication\bin\Debug\net6.0\Middlewares.pdb
