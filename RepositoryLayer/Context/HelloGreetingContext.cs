@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace RepositoryLayer.Context
 
         }
         public virtual DbSet<Entity.GreetingEntity> Greetings { get; set; }
+
+        public virtual DbSet<UserEntity> Users { get; set; }
     }
 }
