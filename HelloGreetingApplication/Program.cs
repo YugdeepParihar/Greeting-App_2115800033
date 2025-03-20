@@ -8,6 +8,7 @@ using RepositoryLayer.Service;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Interface;
 using Middlewares.GlobalExceptionHandler;
+using RepositoryLayer.Hashing;
 
 //Implementing NLogger
 var logger = LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -30,13 +31,20 @@ try
 
     // Add services to the container.
 
+    // Add services to the container.
     builder.Services.AddControllers();
 
-    //Registering the GreetingService
-    //builder.Services.AddScoped<IGreetingService, GreetingService>();
+    // Registering the GreetingService
+    // builder.Services.AddScoped<IGreetingService, GreetingService>();
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
-    
+
+    builder.Services.AddScoped<IUserBL, UserBL>();
+    builder.Services.AddScoped<IUserRL, UserRL>();
+
+    // Register Password_Hash
+    builder.Services.AddScoped<Password_Hash>();
+
     var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
     builder.Services.AddDbContext<HelloGreetingContext>(options => options.UseSqlServer(connectionString));
 
